@@ -1,0 +1,151 @@
+/* Deal Scout — original stylesheet. Dark ink header, warm paper background,
+   one accent colour for prices. No web fonts, no network loads. */
+:root {
+  --ink: #1c2333;
+  --paper: #f6f2ea;
+  --card: #fffdf8;
+  --line: #e3dccb;
+  --muted: #6b6570;
+  --accent: #b3261e;
+  --green: #1e6b3a;
+  --amber: #8a5a00;
+  --chip: #ece5d3;
+  --focus: #2456c8;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+a { color: var(--focus); }
+.top {
+  background: var(--ink);
+  color: #f6f2ea;
+  padding: 22px 20px 18px;
+}
+.brand { display: flex; gap: 12px; align-items: flex-start; max-width: 1080px; margin: 0 auto; }
+.mark { color: #f2b705; font-size: 30px; line-height: 1.1; }
+.brand h1 { margin: 0; font-size: 30px; letter-spacing: .5px; }
+.tag { margin: 2px 0 0; color: #cfc8b8; font-size: 15px; }
+.checked { max-width: 1080px; margin: 10px auto 0; color: #f2b705; font-size: 14px; }
+main { max-width: 1080px; margin: 0 auto; padding: 0 16px 32px; }
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 18px 0;
+}
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.stat b { display: block; font-size: 26px; line-height: 1.15; }
+.stat span { color: var(--muted); font-size: 13px; }
+.controls { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 14px; }
+#search {
+  width: 100%;
+  padding: 11px 13px;
+  font: inherit;
+  border: 1.5px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+#search:focus, select:focus, button:focus-visible, a:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip {
+  border: 1px solid var(--line);
+  background: var(--chip);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.chip[aria-pressed="true"] { background: var(--ink); color: #f6f2ea; border-color: var(--ink); }
+.selects { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
+.selects label { font-size: 13px; color: var(--muted); display: flex; flex-direction: column; gap: 3px; }
+select { font: inherit; padding: 7px 9px; border: 1.5px solid var(--line); border-radius: 8px; background: #fff; }
+.best { margin: 20px 0 4px; }
+.best h2 { font-size: 19px; margin: 0 0 10px; }
+.best ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.best li {
+  display: flex; justify-content: space-between; gap: 12px;
+  background: #fff8e1; border: 1px solid #f0d98c; border-radius: 10px; padding: 10px 14px;
+}
+.best .rank { font-weight: 700; color: var(--accent); margin-right: 8px; }
+.best .save { white-space: nowrap; font-weight: 700; color: var(--green); }
+.count { color: var(--muted); font-size: 14px; margin: 16px 0 10px; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 15px 16px 14px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+.card:hover, .card:focus-visible { border-color: var(--ink); }
+.card .row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.store { font-size: 12px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.badge { font-size: 11px; font-weight: 800; letter-spacing: .5px; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+.badge.new-low { background: #ffe1de; color: var(--accent); }
+.badge.strong { background: #ddf0e2; color: var(--green); }
+.badge.routine { background: #f3ead2; color: var(--amber); }
+.card h3 { margin: 9px 0 2px; font-size: 17px; line-height: 1.3; }
+.card .cat { margin: 0 0 10px; font-size: 13px; color: var(--muted); }
+.price { display: flex; align-items: baseline; gap: 9px; margin-top: auto; }
+.price .sale { font-size: 27px; font-weight: 800; color: var(--accent); }
+.price .usual { text-decoration: line-through; color: var(--muted); }
+.off { font-weight: 800; color: var(--green); }
+.card .save-line { margin: 3px 0 10px; font-size: 14px; color: var(--green); font-weight: 700; }
+.card .note { margin: 0 0 12px; font-size: 14px; color: #44403a; }
+.store-link {
+  margin-top: auto;
+  display: inline-block;
+  background: var(--ink);
+  color: #f6f2ea;
+  text-align: center;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-weight: 700;
+  font-size: 14px;
+}
+.store-link:hover { background: #000; }
+.checked-line { margin: 10px 0 0; font-size: 12.5px; color: var(--muted); }
+.detail {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+}
+.detail h2 { margin: 0 0 4px; font-size: 23px; }
+.detail .meta { color: var(--muted); font-size: 14px; margin: 0 0 14px; }
+.detail dl { display: grid; grid-template-columns: 140px 1fr; gap: 6px 14px; margin: 0 0 16px; font-size: 15px; }
+.detail dt { color: var(--muted); }
+.detail dd { margin: 0; }
+.detail .verdict-box { background: #fff8e1; border: 1px solid #f0d98c; border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; }
+.back { display: inline-block; margin-bottom: 10px; font-size: 14px; }
+.empty { text-align: center; color: var(--muted); padding: 30px 0; }
+footer { max-width: 1080px; margin: 0 auto; padding: 8px 16px 40px; color: #44403a; }
+footer h2 { font-size: 17px; margin-bottom: 6px; }
+footer p { font-size: 14px; }
+.fine { color: var(--muted); }
+@media (max-width: 860px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .brand h1 { font-size: 25px; }
+  .detail dl { grid-template-columns: 1fr; gap: 0; }
+  .detail dd { margin-bottom: 8px; }
+}

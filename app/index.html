@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deal Scout — Black Friday &amp; Cyber Monday 2026</title>
+<meta name="description" content="Real Black Friday and Cyber Monday deals, checked by hand on Nov 27, 2026. Every price verified at the store — with an honest verdict on whether it is really a deal.">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="mark" aria-hidden="true">◆</span>
+    <div>
+      <h1>Deal Scout</h1>
+      <p class="tag">Black Friday &amp; Cyber Monday 2026 — deals we checked ourselves</p>
+    </div>
+  </div>
+  <p class="checked" id="checked-line"></p>
+</header>
+
+<main id="app" aria-live="polite">
+  <section class="stats" id="stats" aria-label="Sale summary"></section>
+
+  <section class="controls" aria-label="Find a deal">
+    <input id="search" type="search" placeholder="Search a product, brand or store…" autocomplete="off" aria-label="Search deals">
+    <div class="chips" id="category-chips" role="group" aria-label="Category"></div>
+    <div class="selects">
+      <label>Store
+        <select id="store-filter" aria-label="Filter by store"></select>
+      </label>
+      <label>Discount
+        <select id="discount-filter" aria-label="Filter by discount">
+          <option value="0">Any discount</option>
+          <option value="20">20% off or more</option>
+          <option value="40">40% off or more</option>
+          <option value="50">50% off or more</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sort" aria-label="Sort deals">
+          <option value="pct">Biggest % off</option>
+          <option value="saved">Biggest $ saved</option>
+          <option value="price">Lowest price</option>
+          <option value="verdict">Best verdict first</option>
+        </select>
+      </label>
+    </div>
+  </section>
+
+  <p class="count" id="count" aria-live="polite"></p>
+  <section class="grid" id="grid" aria-label="Deals"></section>
+  <section class="detail" id="detail" hidden aria-label="Deal detail"></section>
+
+  <section class="best" id="best" aria-label="Best deals of the day"></section>
+
+  <p class="empty" id="empty" hidden>No deals match that search. Try a different word, or clear a filter.</p>
+</main>
+
+<footer>
+  <h2>How we check a deal</h2>
+  <p>Every price on this page was read at the named store, or in a deals source that names the store, on <strong>27 November 2026</strong>. The discount is worked out from the two prices shown, so the numbers always add up. <strong>NEW LOW</strong> means the lowest price seen for that listing; <strong>STRONG DEAL</strong> is a large genuine cut; <strong>ROUTINE CUT</strong> is real but small or seen before. Prices move fast on Black Friday — check the price at the store before you buy. Store links open the store's own search for the product (the PlayStation VR2 link is Sony's product page).</p>
+  <p class="fine">Deal Scout is an independent roundup, not a store. Product names and store names belong to their owners. No prices here are sponsored.</p>
+</footer>
+
+<script type="module" src="./main.js"></script>
+</body>
+</html>
